@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dial Redirect</title>
+</head>
+<body>
+    <p> Redirecting to Phone Dialer... [ <span id="phone"></span> ] </p>
+    <script>
+        var phone_redirect = document.location.hash.replace("#/","").replace(" ","").trim()
+        if(phone_redirect==""){
+            document.querySelector("#phone").innerHTML="No Phone Number sent."
+        }else{
+            setTimeout(()=>{
+            
+            document.querySelector("#phone").innerHTML=phone_redirect
+            document.location.replace("tel://"+phone_redirect)
+        },1000)
+        }
+    </script>
+</body>
+</html>
