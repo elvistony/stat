@@ -1,0 +1,2 @@
+# stat
+Temporary Stat Page
